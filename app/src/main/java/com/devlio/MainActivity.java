@@ -15,6 +15,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * 2020.11.03 Git 업로드
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     TextView dateTextView;
