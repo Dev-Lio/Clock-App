@@ -64,21 +64,24 @@ public class MainActivity extends AppCompatActivity {
         ampmTextView = findViewById(R.id.ampmTextView);
         timeTextView = findViewById(R.id.timeTextView);
 
+        // 폰트 설정 (임의 고정)
         Typeface typeface = getResources().getFont(R.font.sky);
-        int color = Color.parseColor("#FFE400");
-
         dateTextView.setTypeface(typeface);
         ampmTextView.setTypeface(typeface);
         timeTextView.setTypeface(typeface);
 
+        // 폰트 색상 설정 (임의 고정)
+        int color = Color.parseColor("#FFE400");
         dateTextView.setTextColor(color);
         ampmTextView.setTextColor(color);
         timeTextView.setTextColor(color);
 
+        // 날짜/시각 표기 방식 설정
         dateFormat = new SimpleDateFormat("yyyy. MM. dd (E)", Locale.getDefault());
         ampmFormat = new SimpleDateFormat("aa", Locale.getDefault());
         timeFormat = new SimpleDateFormat("hh : mm");
 
+        // 시계 쓰레드
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                                   });
 
                     try {
+                        // 쓰레드 실행 = 1초 간격
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
